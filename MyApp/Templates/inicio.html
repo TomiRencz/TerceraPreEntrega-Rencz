@@ -4,20 +4,22 @@
 
 {% block contenidoQueCambia %}
 
-    <h1>Este es el título del Inicio que cambio</h1>    
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <h3>Podes buscar un Accesorio:</h3>
-    <form>
-        <input type="text" name="nombre" id="nombre">
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista 🙂 -->
+    <h1>Bienvenido!</h1>
+    <h3>Busca tu accesorio aca:</h3>
+    <form action="/MyApp/buscar/" method="GET">
+        <input type="text" name="nombre" id="producto">
         <input type="submit" value="Buscar">
-    <!-- </form>
-    {% if cursos %}
-    <p>Estamos buscando el: {{camada}}</p>
+    </form>
+    {% if productos %}
+    <p>Resultado de la busqueda:</p>
     <ul>
-    {% for curso in cursos %}
-        <li> {{curso.nombre}} </li>
-        <li> {{curso.camada}} </li>
+    {% for producto in productos %}
+        <li> {{producto.nombre}} </li>
+        <li> {{producto.modelo}} </li>
+        <li> {{producto.marca}} </li>
     {% endfor %}
     </ul>
-    {% endif %} -->
+    {% endif %}
 {% endblock %}

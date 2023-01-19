@@ -7,6 +7,9 @@ class Producto(models.Model):
     precio = models.IntegerField()
     antiguedad = models.IntegerField()
 
+    def __str__(self):
+        return f"Nombre: {self.nombre} - Marca: {self.marca} - Modelo: {self.modelo}"
+
 class Vendedor(models.Model):
     nombre= models.CharField(max_length=30)
     apellido= models.CharField(max_length=30)
@@ -25,4 +28,8 @@ class Comprador(models.Model):
 
 class Empresa(models.Model):
     nombre = models.CharField(max_length=30)
+
+    def __str__(self):
+        return f"Nombre: {self.nombre}"
+
 # Create your models here.
